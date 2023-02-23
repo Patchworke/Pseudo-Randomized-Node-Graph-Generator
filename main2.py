@@ -1,3 +1,4 @@
+# text text
 from random import randrange
 from tkinter import Tk, Canvas
 from math import sqrt
