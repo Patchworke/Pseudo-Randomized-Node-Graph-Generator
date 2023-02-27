@@ -40,29 +40,32 @@ def draw_graph(nodes, complexity):
                            fill='white')
         coords.append([x, y])
         graph_coords.update({node: coords[node]})
-    print(graph_coords)
+    print(f'{graph_coords}\n')
 
     # Node Finds "m" Closest Nodes
     m = randrange(1, complexity)
 
+    distances = []
     for node in range(nodes):
-        distances = []
         distance = []
         x = graph_coords[node][0]
         y = graph_coords[node][1]
+        print(node)
         for node_2 in range(nodes):
             if node != node_2:
-                print(f'{node}->{node_2}')
+                # print(f'{node}->{node_2}')
                 x_0 = graph_coords[node_2][0]
                 y_0 = graph_coords[node_2][1]
                 delta_x = abs(x_0 - x)
                 delta_y = abs(y_0 - y)
-                print(delta_x)
-                print(delta_y)
+                # print(delta_x)
+                # print(delta_y)
                 distance.append(round(sqrt(delta_x ** 2 + delta_y ** 2)))
-                print(distance)
-                print()
+                # print()
+        print(distance)
+        print()
         distances.append(distance)
+
     print(distances)
 
     for node in range(nodes):
